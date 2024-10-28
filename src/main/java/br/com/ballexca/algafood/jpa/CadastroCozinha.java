@@ -14,8 +14,8 @@ public class CadastroCozinha {
     @PersistenceContext
     private EntityManager manager;
 
-    public List<Cozinha> listarCozinhas() {
-        TypedQuery<Cozinha> query = manager.createQuery("from Cozinha", Cozinha.class);
+    public List<Cozinha> listar() {
+        TypedQuery<Cozinha> query = manager.createQuery("SELECT c from Cozinha c", Cozinha.class);
         return query.getResultList();
     }
 }
